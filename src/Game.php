@@ -56,6 +56,8 @@ class Game
             $this->cells = $newCells;
         }
 
+        echo "Game World (Size: {$this->size} x {$this->size}, Species: {$this->species}):\n";
+
         // Save the result to the output file
         $output->saveWorld($this->size, $this->species, $this->cells);
     }
