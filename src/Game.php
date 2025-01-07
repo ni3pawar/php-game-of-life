@@ -39,8 +39,18 @@ class Game
             for ($y = 0; $y < $this->size; $y++) {
                 for ($x = 0; $x < $this->size; $x++) {
                     $newCells[$y][$x] = $this->evolveCell($x, $y);
+
+                    // Print the cell's species or a dot (.) for an empty cell
+                    echo ($newCells[$y][$x] === null) ? ' ' : $newCells[$y][$x];
+                    echo ' ';  // Space between cells
+
                 }
+                echo "\n";  // Newline after each row
             }
+            echo "\n";  // Extra newline for readability
+
+            // Move to (0,0).
+            echo "\033[0;0H";
 
             // Assign the new cells after the iteration
             $this->cells = $newCells;
